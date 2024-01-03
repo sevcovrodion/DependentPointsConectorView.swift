@@ -1,4 +1,4 @@
-DependentPointsConectorView.swiftimport SwiftUI
+import SwiftUI
 
 struct DependentPointsConectorView: View {
     
@@ -9,3 +9,7 @@ struct DependentPointsConectorView: View {
             connectButton
             cancelButton
             disconnectButton
+        }
+        .buttonStyle(.plain)
+        .opacity(store.state.selectedPointsIDs.isEmpty ? 0 : 1)
+        .animation(.default, value: store.state.selectedPointsIDs)
